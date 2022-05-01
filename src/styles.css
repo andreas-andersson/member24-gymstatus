@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap");
+
+:root {
+  --font-default: "Teko", sans-serif;
+
+  --tint-primary: 0, 127, 149;
+  --tint-secondary: 126, 213, 228;
+  --tint-black: 0, 0, 0;
+  --tint-white: 255, 255, 255;
+
+  --solid: 1;
+  --muted: 0.7;
+  --faded: 0.3;
+
+  --color-primary: rgba(var(--tint-primary), 1);
+  --color-primary-muted: rgba(var(--tint-primary), var(--muted));
+  --color-primary-faded: rgba(var(--tint-primary), var(--faded));
+  --color-secondary: rgba(var(--tint-secondary), var(--solid));
+  --color-secondary-muted: rgba(var(--tint-secondary), var(--muted));
+  --color-secondary-faded: rgba(var(--tint-secondary), var(--faded));
+  --color-black: rgba(var(--tint-black), var(--solid));
+  --color-black-muted: rgba(var(--tint-black), var(--muted));
+  --color-black-faded: rgba(var(--tint-black), var(--faded));
+  --color-white: rgba(var(--tint-white), var(--solid));
+  --color-white-muted: rgba(var(--tint-white), var(--muted));
+  --color-white-faded: rgba(var(--tint-white), var(--faded));
+
+  --spacing-none: 0;
+  --spacing-100: 0.2rem;
+  --spacing-200: 0.4rem;
+  --spacing-300: 0.6rem;
+  --spacing-400: 0.8rem;
+  --spacing-600: 1rem;
+  --spacing-800: 2rem;
+
+  --size-300: .6rem;
+  --size-400: 1rem;
+  --size-500: 1.2rem;
+  --size-600: 1.5rem;
+  --size-700: 3rem;
+
+  --shadow-offset-200: 0 1px 2px;
+  --shadow-offset-400: 0 4px 4px -2px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-default);
+  font-size: 16px;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    180deg,
+    var(--color-primary) 0,
+    var(--color-secondary) 100%
+  );
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  padding: var(--spacing-800);
+}
+
+h1 {
+  text-shadow: var(--shadow-offset-200) var(--color-black-faded);
+  font-size: var(--size-700);
+  color: var(--color-white);
+  margin: var(--spacing-none);
+}
+h4 {
+  font-size: var(--size-400);
+  color: var(--color-white-muted);
+  margin: var(--spacing-none);
+  text-transform:uppercase;
+  font-weight: 400;
+}
+
+.progress-bar {
+  width: 80%;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: var(--shadow-offset-200) var(--color-white-faded);
+}
+.progress-value {
+  background: var(--color-white);
+  height: 100%;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-offset-400) var(--color-black-muted);
+}
+.percentage {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--color-black-faded);
+}
+
+.gymstatus {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label.select-label {
+  color: var(--color-white-muted);
+  font-size: var(--size-500);
+}
+select {
+  font-family: var(--font-default);
+  margin-top: var(--spacing-400);
+  width: max-content;
+  margin: auto;
+  appearance: none;
+  background: transparent;
+  padding: var(--spacing-200) var(--spacing-400);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-300);
+  font-size: var(--size-500);
+  text-align: center;
+  outline: none;
+  position: relative;
+}
