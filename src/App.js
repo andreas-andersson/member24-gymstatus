@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Logo from "./components/Logo";
 import Select from "./components/Select";
 import GymStatus from "./components/GymStatus";
@@ -7,7 +7,6 @@ import "./styles.css";
 export default function App() {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState(1109);
-  const selectBox = useRef();
 
   // Loads data from API
   const getData = async () => {
@@ -22,10 +21,10 @@ export default function App() {
   }, [selected, data]);
 
   // Handles changed selected
-  const handleSetSelected = () => {
+  const handleSetSelected = (id) => {
     // persist selected in localstorage
-    localStorage.setItem("selected_gym", selectBox.current.value);
-    setSelected(parseInt(selectBox.current.value, 10));
+    localStorage.setItem("selected_gym", id);
+    setSelected(id);
   };
 
   // On Mount
@@ -56,7 +55,6 @@ export default function App() {
       <Logo />
       <GymStatus gym={getSelected()} />
       <Select
-        selectBox={selectBox}
         data={data}
         handleSetSelected={handleSetSelected}
         selected={selected}

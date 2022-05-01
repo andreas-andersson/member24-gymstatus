@@ -1,28 +1,19 @@
+import { useState } from "react";
+import SelectToggle from "./SelectToggle";
+import SelectList from "./SelectList";
+
 export default function Select({
   data,
-  selectBox,
   selected,
   handleSetSelected
 }) {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <label htmlFor="gym-select" className="select-label">
-        Välj gym
-      </label>
-      <select
-        id="gym-select"
-        ref={selectBox}
-        value={selected}
-        onChange={() => {
-          handleSetSelected();
-        }}
-      >
-        {data.length > 0 ? (
-          <Options data={data} />
-        ) : (
-          <LoadingOptions selected={selected} />
-        )}
-      </select>
+      <SelectToggle open={open} setOpen={setOpen} />
+      <SelectList open={open} setOpen={setOpen} data={data} selected={selected} handleSetSelected={handleSetSelected} />
     </>
   );
 }
