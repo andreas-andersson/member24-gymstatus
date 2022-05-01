@@ -97,6 +97,7 @@ h4 {
   height: 100%;
   border-radius: 0.5rem;
   box-shadow: var(--shadow-offset-400) var(--color-black-muted);
+  transition: width 0.5s ease-in-out;
 }
 .percentage {
   font-size: 2rem;
@@ -149,7 +150,7 @@ select {
   align-items: center;
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s, transform 0.6s;
+  transition: opacity 0.3s, transform 0.3s;
   z-index: 100;
   text-shadow: var(--shadow-offset-200) var(--color-black-faded);
 }
@@ -189,7 +190,7 @@ select {
   min-width: 20rem;
   max-width: 90vw;
   opacity:0;
-  transition: opacity 0.3s, max-height 0.6s;
+  transition: opacity 0.3s, max-height 0.3s;
   background: var(--color-white);
   border-radius: var(--size-300);
   list-style-type: none;
@@ -203,6 +204,7 @@ select {
 .SelectList.open {
   opacity: 1;
   max-height: calc(100vh - 6rem);
+  max-height: calc(-webkit-fill-available - 6rem);
 }
 .SelectList li {
   padding: var(--spacing-200) var(--spacing-600);
