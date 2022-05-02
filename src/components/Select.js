@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SelectToggle from "./SelectToggle";
 import SelectList from "./SelectList";
+import { useLayoutEffect } from "react";
 
 export default function Select({
   data,
@@ -31,20 +32,4 @@ export default function Select({
       <SelectList open={open} setOpen={setOpen} data={data} selected={selected} handleSetSelected={handleSetSelected} />
     </>
   );
-}
-
-function Options({ data }) {
-  return (
-    <>
-      {data.map((gym) => (
-        <option key={gym.id} value={gym.id}>
-          {gym.name}
-        </option>
-      ))}
-    </>
-  );
-}
-
-function LoadingOptions({ selected }) {
-  return <option value={selected}>Loading...</option>;
 }

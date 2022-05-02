@@ -11,6 +11,7 @@
   --solid: 1;
   --muted: 0.7;
   --faded: 0.3;
+  --vh: 100vh;
 
   --color-primary: rgba(var(--tint-primary), 1);
   --color-primary-muted: rgba(var(--tint-primary), var(--muted));
@@ -84,28 +85,7 @@ h4 {
   font-weight: 400;
 }
 
-.progress-bar {
-  width: 80%;
-  height: 2rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 1rem;
-  padding: 0.5rem;
-  box-shadow: var(--shadow-offset-200) var(--color-white-faded);
-}
-.progress-value {
-  background: var(--color-white);
-  height: 100%;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow-offset-400) var(--color-black-muted);
-  transition: width 0.5s ease-in-out;
-}
-.percentage {
-  font-size: 2rem;
-  margin-top: 1rem;
-  color: var(--color-black-faded);
-}
-
-.gymstatus {
+.Gymstatus {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -113,38 +93,43 @@ h4 {
   justify-content: center;
 }
 
-label.select-label {
-  color: var(--color-white-muted);
-  font-size: var(--size-500);
+.Gymstatus .progress-bar {
+  width: 80%;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: var(--shadow-offset-200) var(--color-white-faded);
 }
-select {
-  font-family: var(--font-default);
-  margin-top: var(--spacing-400);
-  width: max-content;
-  margin: auto;
-  appearance: none;
-  background: transparent;
-  padding: var(--spacing-200) var(--spacing-400);
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
-  border-radius: var(--size-300);
-  font-size: var(--size-500);
-  text-align: center;
-  outline: none;
-  position: relative;
+
+.Gymstatus .progress-value {
+  background: var(--color-white);
+  height: 100%;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-offset-400) var(--color-black-muted);
+  transition: width 0.5s ease-in-out;
 }
+
+.Gymstatus .percentage {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--color-black-faded);
+}
+
 
 .SelectToggle {
   position: fixed;
+  bottom: 2rem;
+  right: 2rem;
   appearance: none;
   color: var(--color-white);
   font-size: var(--size-600);
   font-family: var(--font-default);
   background: transparent;
   border:0;
+  margin:0;
+  padding:0;
   cursor: pointer;
-  bottom: 2rem;
-  right: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -166,14 +151,14 @@ select {
   border-radius: 50%;
   background: var(--color-white);
   transform: rotate(0deg);
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: var(--shadow-offset-200) var(--color-black-faded);
 }
 .open .EditIcon {
-  transform: rotate(22deg);
+  transform: rotate(45deg);
 }
 .EditIcon img {
   max-width: 2rem;

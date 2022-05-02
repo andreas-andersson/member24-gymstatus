@@ -1,13 +1,13 @@
 export default function GymStatus({ gym }) {
   if (!gym) {
     return (
-      <div className="gymstatus">
+      <div className="Gymstatus">
         <h1>Laddar...</h1>
       </div>
     );
   }
   return (
-    <div className="gymstatus">
+    <div className="Gymstatus">
       <h4>Beläggning just nu</h4>
       <h1>{gym.name}</h1>
       <div className="progress-bar" id={gym.id}>
