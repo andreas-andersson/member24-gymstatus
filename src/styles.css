@@ -203,8 +203,8 @@ select {
 }
 .SelectList.open {
   opacity: 1;
-  max-height: calc(100vh - 6rem);
-  max-height: calc(-webkit-fill-available - 6rem);
+  max-height: calc(var(--vh) - 6rem);
+  /* max-height: calc(-webkit-fill-available - 6rem); */
 }
 .SelectList li {
   padding: var(--spacing-200) var(--spacing-600);

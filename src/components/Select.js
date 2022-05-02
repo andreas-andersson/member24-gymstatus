@@ -10,6 +10,21 @@ export default function Select({
 
   const [open, setOpen] = useState(false);
 
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    const body = document.body;
+
+    const setHeight = () => {
+      root.style.setProperty('--vh', window.innerHeight + "px");
+    }
+    setHeight();
+    body.addEventListener('resize', setHeight)
+    
+    return () => {
+      body.removeEventListener('resize', setHeight)
+    }
+  },[])
+
   return (
     <>
       <SelectToggle open={open} setOpen={setOpen} />
